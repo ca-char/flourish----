@@ -1,0 +1,41 @@
+{% extends "navigation_base.html" %} {% block content %}
+<div class="modal-page-wrapper">
+  <div class="modal-content modal-centred">
+    <h2>Edit Plant Library</h2>
+
+    <form method="POST">
+      {{ form.hidden_tag() }}
+      <div class="form-group">
+        {{ form.plant_type.label }} {{ form.plant_type(class="form-control") }}
+        {% for error in form.plant_type.errors %}
+        <div class="alert-danger">{{ error }}</div>
+        {% endfor %}
+      </div>
+      <div class="form-group">
+        {{ form.water.label }} {{ form.water(class="form-control") }} {% for
+        error in form.water.errors %}
+        <div class="alert-danger">{{ error }}</div>
+        {% endfor %}
+      </div>
+      <div class="form-group">
+        {{ form.light.label }} {{ form.light(class="form-control") }} {% for
+        error in form.light.errors %}
+        <div class="alert-danger">{{ error }}</div>
+        {% endfor %}
+      </div>
+      <div class="form-group">
+        {{ form.soil.label }} {{ form.soil(class="form-control") }} {% for error
+        in form.soil.errors %}
+        <div class="alert-danger">{{ error }}</div>
+        {% endfor %}
+      </div>
+      <div class="form-actions">
+        {{ form.submit(class="btn-primary btn-register") }}
+        <a href="{{ url_for('views.manage_library') }}" class="btn-secondary">
+          Cancel
+        </a>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

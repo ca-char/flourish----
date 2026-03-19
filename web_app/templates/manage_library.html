@@ -1,0 +1,92 @@
+{% extends "navigation_base.html" %} {% block header %}
+<div class="page-container">
+  <h1>All plants</h1>
+  {% endblock %} {% block content %}
+
+  <div class="top-bar">
+    <button onclick="openModal('addPlantModal')" class="btn-primary">
+      Add a new plant
+    </button>
+  </div>
+
+  <div id="addPlantModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('addPlantModal')">&times;</span>
+      <h2>Add a plant to library</h2>
+      <form method="POST" action="{{ url_for('views.manage_library') }}">
+        {{ form.hidden_tag() }}
+
+        <div class="form-group">
+          {{ form.plant_type.label }} {{ form.plant_type(class="form-control")
+          }}
+        </div>
+        <div class="form-group">
+          {{ form.water.label }} {{ form.water(class="form-control") }}
+        </div>
+        <div class="form-group">
+          {{ form.light.label }} {{ form.light(class="form-control") }}
+        </div>
+        <div class="form-group">
+          {{ form.soil.label }} {{ form.soil(class="form-control") }}
+        </div>
+        <div class="form-button-wrapper">
+          {{ form.submit(class="btn-primary") }}
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="plant-grid">
+    {% for plant in plants %}
+    <div class="plant-card">
+      <div class="card-actions-top">
+        <a
+          href="{{ url_for('views.edit_plant_library', plant_id=plant.plant_id) }}"
+          class="btn-secondary-icon"
+          title="Edit"
+        >
+          <span class="material-icons">edit</span>
+        </a>
+        <form
+          method="POST"
+          action="{{ url_for('views.delete_plant') }}"
+          style="display: inline"
+        >
+          <input type="hidden" name="plant_id" value="{{ plant.plant_id }}" />
+          <button
+            class="btn-danger-icon"
+            type="submit"
+            onclick="return confirm('Are you sure you want to delete {{plant.plant_type}} from the plant library? This action cannot be reversed.')"
+            title="Delete"
+          >
+            <span class="material-icons">delete</span>
+          </button>
+        </form>
+      </div>
+      <img
+        src="{{ url_for('static', filename='plant_images/' + (plant.image_filename or 'placeholder.png')) }}"
+        alt="{{ plant.plant_name }}"
+        class="card-img"
+      />
+      <div class="card-content">
+        <h3>{{ plant.plant_type }}</h3>
+        <p>Water: {{ plant.water }}</p>
+        <p>Light: {{ plant.light }}</p>
+        <p>Soil: {{ plant.soil }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  function openModal(id) {
+    document.getElementById(id).style.display = "flex";
+  }
+
+  function closeModal(id) {
+    document.getElementById(id).style.display = "none";
+  }
+</script>
+
+{% endblock %}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{% block title %}Flourish{% endblock %}</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='styles.css') }}"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <nav class="navbar">
+      <div class="nav-left">
+        <a
+          href="{% if current_user.is_admin %}/admin_base{% else %}/user_base{% endif %}"
+          class="app-name"
+        >
+          <img
+            src="{{ url_for('static', filename='FlourishLogo.svg') }}"
+            alt="Logo"
+          />
+          Flourish
+        </a>
+      </div>
+      <div class="nav-center">{% block nav_links %}{% endblock %}</div>
+      <div class="nav-right">{% block nav_icons %}{% endblock %}</div>
+    </nav>
+
+    {% with messages = get_flashed_messages(with_categories=true) %} {% if
+    messages %}
+    <ul class="flashes">
+      {% for category, message in messages %} {% if category == 'error' %}
+      <div class="alert-danger">
+        <span class="material-icons">error</span>
+        {{ message }}
+        <button
+          type="button"
+          onclick="this.parentElement.style.display='none';"
+          class="close-btn"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% else %}
+      <div class="alert-success">
+        <span class="material-icons">check_circle</span>
+        {{ message }}
+        <button
+          type="button"
+          onclick="this.parentElement.style.display='none';"
+          class="close-btn"
+        >
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      {% endif %} {% endfor %}
+    </ul>
+    {% endif %} {% endwith %}
+
+    <main>
+      {% block header %}{% endblock %} {% block content %}{% endblock %}
+    </main>
+
+    <script>
+      function toggleDropdown() {
+        const dropdown = document.getElementById("user-dropdown");
+        const wrapper = document.getElementById("account-wrapper");
+
+        dropdown.classList.toggle("hidden");
+        wrapper.classList.toggle("active");
+      }
+
+      document.addEventListener("click", function (e) {
+        const wrapper = document.getElementById("account-wrapper");
+        const dropdown = document.getElementById("user-dropdown");
+
+        if (!wrapper.contains(e.target) && !dropdown.contains(e.target)) {
+          dropdown.classList.add("hidden");
+          wrapper.classList.remove("active");
+        }
+      });
+    </script>
+  </body>
+</html>

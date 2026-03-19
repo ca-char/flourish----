@@ -1,0 +1,66 @@
+{% extends "navigation_base.html" %} {% block content %}
+<div class="page-container">
+  <h1>Admin dashboard</h1>
+  <div class="mini-card-container">
+    <div class="mini-card">
+      <p>Total number of user accounts: {{ total_users }}</p>
+    </div>
+    <div class="mini-card">
+      <p>Total number of user plants: {{ total_user_plants }}</p>
+    </div>
+    <div class="mini-card">
+      <p>Total plants in library: {{ total_plants }}</p>
+    </div>
+    <div class="mini-card">
+      <p>Most popular plant type: {{ most_popular_plant }}</p>
+    </div>
+  </div>
+
+  <div class="tables-container">
+    <div class="table-wrapper">
+      <h3>View Users</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Email</th>
+              <th>Role</th>
+              <th>Number of Plants</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for user in users %}
+            <tr>
+              <td>{{ user.email }}</td>
+              <td>{{ 'Admin' if user.is_admin else 'User' }}</td>
+              <td>{{ user.user_plants | length }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div class="table-wrapper">
+      <h3>Frequency of Plant Type</h3>
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th>Plant Type</th>
+              <th>Number of Users Caring for this Plant Type</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for plant_type, count in plant_type_frequency %}
+            <tr>
+              <td>{{ plant_type }}</td>
+              <td>{{ count }}</td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

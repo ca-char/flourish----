@@ -1,0 +1,12 @@
+Flask
+Flask-Login
+Flask-WTF
+Flask-SQLAlchemy
+Werkzeug
+WTForms
+Werkzeug
+Jinja2
+pytest
+pytest-flask
+Flask-Limiter
+Flask-Bcrypt

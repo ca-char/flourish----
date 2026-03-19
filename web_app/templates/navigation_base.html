@@ -1,0 +1,7 @@
+{% extends "base.html" %} {% import "macros.html" as ui %} {% block nav_links %}
+{% if current_user.is_admin %} {{ ui.nav_link('/admin_base', 'Admin Dashboard')
+}} {{ ui.nav_link('/manage_library', 'Manage Plant Library') }} {% else %} {{
+ui.nav_link('/my_plants', 'My Plants') }} {{ ui.nav_link('/plant_library',
+'Plant Library') }} {% endif %} {% endblock %} {% block nav_icons %} {{
+ui.nav_svg_icon(current_user.first_name or current_user.email, logout_form) }}
+{% endblock %}

@@ -1,0 +1,346 @@
+{
+  "users": [
+    {
+      "user_id": 1,
+      "email": "admin1@email.com",
+      "password": "Admin1!",
+      "first_name": "AdminOne",
+      "is_admin": true
+    },
+    {
+      "user_id": 2,
+      "email": "admin2@email.com",
+      "password": "adminpass",
+      "first_name": "AdminTwo",
+      "is_admin": true
+    },
+    {
+      "user_id": 3,
+      "email": "bob@email.com",
+      "password": "Bobiscool1!",
+      "first_name": "Bob",
+      "is_admin": false
+    },
+    {
+      "user_id": 4,
+      "email": "dave@email.com",
+      "password": "userpass",
+      "first_name": "Dave",
+      "is_admin": false
+    },
+    {
+      "user_id": 5,
+      "email": "steve@email.com",
+      "password": "userpass",
+      "first_name": "Steve",
+      "is_admin": false
+    },
+    {
+      "user_id": 6,
+      "email": "gary@email.com",
+      "password": "userpass",
+      "first_name": "Gary",
+      "is_admin": false
+    },
+    {
+      "user_id": 7,
+      "email": "eva@email.com",
+      "password": "userpass",
+      "first_name": "Eva",
+      "is_admin": false
+    },
+    {
+      "user_id": 8,
+      "email": "tina@email.com",
+      "password": "userpass",
+      "first_name": "Tina",
+      "is_admin": false
+    },
+    {
+      "user_id": 9,
+      "email": "mike@email.com",
+      "password": "userpass",
+      "first_name": "Mike",
+      "is_admin": false
+    },
+    {
+      "user_id": 10,
+      "email": "nina@email.com",
+      "password": "userpass",
+      "first_name": "Nina",
+      "is_admin": false
+    }
+  ],
+  "plants": [
+    {
+      "plant_id": 1,
+      "plant_type": "Peace Lily",
+      "water": "Weekly",
+      "light": "Indirect Light",
+      "soil": "Moist, well-draining",
+      "image_filename": "peace_lily.png"
+    },
+    {
+      "plant_id": 2,
+      "plant_type": "Calathea",
+      "water": "Every 3 days, use filtered water to avoid leaf tip browning",
+      "light": "Bright, indirect light",
+      "soil": "Keep the soil consistently moist",
+      "image_filename": "calathea.png"
+    },
+    {
+      "plant_id": 3,
+      "plant_type": "Orchid",
+      "water": "Every 5 to 7 days, or when potting mixture is nearly dry",
+      "light": "Bright, indirect light",
+      "soil": "Bark-based orchid mix",
+      "image_filename": "orchid.png"
+    },
+    {
+      "plant_id": 4,
+      "plant_type": "Prayer Plant",
+      "water": "Keep soil moist, water when top inch of soil feels dry",
+      "light": "Low to Medium",
+      "soil": "Peaty mix, consistently moist soil",
+      "image_filename": "prayer_plant.png"
+    },
+    {
+      "plant_id": 5,
+      "plant_type": "String of Hearts",
+      "water": "Every 10 days, water sparingly",
+      "light": "Bright Light, place near a window",
+      "soil": "Dry, sandy, well-draining potting mix",
+      "image_filename": "string_of_hearts.png"
+    },
+    {
+      "plant_id": 6,
+      "plant_type": "Spider Plant",
+      "water": "Weekly, use distilled water",
+      "light": "Bright, indirect light. Can tolerate lower light, but growth may be slower",
+      "soil": "General potting mix",
+      "image_filename": "spider_plant.png"
+    },
+    {
+      "plant_id": 7,
+      "plant_type": "Snake Plant",
+      "water": "Every 2 to 3 weeks",
+      "light": "Can tolerate low to bright, indirect light",
+      "soil": "Well-drained potting mix, to avoid root rot",
+      "image_filename": "snake_plant.png"
+    },
+    {
+      "plant_id": 8,
+      "plant_type": "ZZ Plant",
+      "water": "Every 3 weeks, infrequent watering",
+      "light": "Low light, place in room with limited natural light",
+      "soil": "Fast-draining",
+      "image_filename": "ZZ.png"
+    },
+    {
+      "plant_id": 9,
+      "plant_type": "Fiddle Leaf Fig",
+      "water": "Weekly, when top inch of soil is dry",
+      "light": "Bright filtered light, avoid direct sunlight",
+      "soil": "Rich, well-drained",
+      "image_filename": "fiddle_leaf_fig.png"
+    },
+    {
+      "plant_id": 10,
+      "plant_type": "Aloe Vera",
+      "water": "Every 2 weeks, water sparingly",
+      "light": "Full Sun",
+      "soil": "Cactus mix, or add sand or grit to regular potting soil",
+      "image_filename": "aloe_vera.png"
+    }
+  ],
+  "user_plants": [
+    {
+      "user_plant_id": 1,
+      "user_id": 3,
+      "plant_id": 2,
+      "plant_type": "Calathea",
+      "plant_name": "Living Room Calathea",
+      "last_watered": "2025-06-10",
+      "next_watering_date": "2025-06-17"
+    },
+    {
+      "user_plant_id": 2,
+      "user_id": 3,
+      "plant_id": 2,
+      "plant_type": "Calathea",
+      "plant_name": "Bedroom Calathea",
+      "last_watered": "2025-06-11",
+      "next_watering_date": "2025-06-18"
+    },
+    {
+      "user_plant_id": 3,
+      "user_id": 3,
+      "plant_id": 1,
+      "plant_type": "Peace Lily",
+      "plant_name": "New Peace Lily",
+      "last_watered": "2025-06-12",
+      "next_watering_date": "2025-06-19"
+    },
+    {
+      "user_plant_id": 4,
+      "user_id": 4,
+      "plant_id": 3,
+      "plant_type": "Orchid",
+      "plant_name": "Kitchen Orchid",
+      "last_watered": "2025-06-09",
+      "next_watering_date": "2025-06-16"
+    },
+    {
+      "user_plant_id": 5,
+      "user_id": 5,
+      "plant_id": 4,
+      "plant_type": "Prayer Plant",
+      "plant_name": "Prayer Plant",
+      "last_watered": "2025-06-08",
+      "next_watering_date": "2025-06-15"
+    },
+    {
+      "user_plant_id": 6,
+      "user_id": 5,
+      "plant_id": 1,
+      "plant_type": "Peace Lily",
+      "plant_name": "Bathroom Peace Lily",
+      "last_watered": "2025-06-07",
+      "next_watering_date": "2025-06-14"
+    },
+    {
+      "user_plant_id": 7,
+      "user_id": 5,
+      "plant_id": 5,
+      "plant_type": "String of Hearts",
+      "plant_name": "Heart Vine",
+      "last_watered": "2025-06-06",
+      "next_watering_date": "2025-06-13"
+    },
+    {
+      "user_plant_id": 8,
+      "user_id": 6,
+      "plant_id": 6,
+      "plant_type": "Spider Plant",
+      "plant_name": "Hanging Spider",
+      "last_watered": "2025-06-05",
+      "next_watering_date": "2025-06-12"
+    },
+    {
+      "user_plant_id": 9,
+      "user_id": 7,
+      "plant_id": 7,
+      "plant_type": "Snake Plant",
+      "plant_name": "Office Snake",
+      "last_watered": "2025-06-04",
+      "next_watering_date": "2025-06-11"
+    },
+    {
+      "user_plant_id": 10,
+      "user_id": 8,
+      "plant_id": 9,
+      "plant_type": "Fiddle Leaf Fig",
+      "plant_name": "Living Room Fig",
+      "last_watered": "2025-06-03",
+      "next_watering_date": "2025-06-10"
+    }
+  ],
+  "care_notes": [
+    {
+      "care_note_id": 1,
+      "user_plant_id": 1,
+      "care_note": "Leaves looking healthy",
+      "note_date": "2025-05-02"
+    },
+    {
+      "care_note_id": 2,
+      "user_plant_id": 2,
+      "care_note": "Healthy",
+      "note_date": "2025-05-02"
+    },
+    {
+      "care_note_id": 3,
+      "user_plant_id": 3,
+      "care_note": "Leaves drooping",
+      "note_date": "2025-05-02"
+    },
+    {
+      "care_note_id": 4,
+      "user_plant_id": 4,
+      "care_note": "Brown tips on leaves",
+      "note_date": "2025-06-10"
+    },
+    {
+      "care_note_id": 5,
+      "user_plant_id": 5,
+      "care_note": "Yellow tips on leaves",
+      "note_date": "2025-06-09"
+    },
+    {
+      "care_note_id": 6,
+      "user_plant_id": 6,
+      "care_note": "New leaf growth",
+      "note_date": "2025-06-08"
+    },
+    {
+      "care_note_id": 7,
+      "user_plant_id": 7,
+      "care_note": "Soil dry",
+      "note_date": "2025-06-07"
+    },
+    {
+      "care_note_id": 8,
+      "user_plant_id": 8,
+      "care_note": "Overwatered last week",
+      "note_date": "2025-06-06"
+    },
+    {
+      "care_note_id": 9,
+      "user_plant_id": 9,
+      "care_note": "Probs needs repotting soon",
+      "note_date": "2025-06-05"
+    },
+    {
+      "care_note_id": 10,
+      "user_plant_id": 10,
+      "care_note": "Bright green and thriving",
+      "note_date": "2025-06-04"
+    },
+    {
+      "care_note_id": 11,
+      "user_plant_id": 1,
+      "care_note": "Misted leaves in the morning",
+      "note_date": "2025-06-13"
+    },
+    {
+      "care_note_id": 12,
+      "user_plant_id": 1,
+      "care_note": "Thrivinggggg",
+      "note_date": "2025-06-25"
+    },
+    {
+      "care_note_id": 13,
+      "user_plant_id": 2,
+      "care_note": "Rotated the plant for even sunlight",
+      "note_date": "2025-06-13"
+    },
+    {
+      "care_note_id": 14,
+      "user_plant_id": 2,
+      "care_note": "Removed dried leaves",
+      "note_date": "2025-06-25"
+    },
+    {
+      "care_note_id": 15,
+      "user_plant_id": 3,
+      "care_note": "Probably will not survive, leaves drooping, watered slightly",
+      "note_date": "2025-06-14"
+    },
+    {
+      "care_note_id": 16,
+      "user_plant_id": 3,
+      "care_note": "Wiped dust off leaves with lint roller",
+      "note_date": "2025-06-25"
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+{% macro nav_link(href, label) %}
+<a
+  href="{{ href }}"
+  class="nav-link {% if request.path == href %}active{% endif %}"
+>
+  {{ label }}
+</a>
+{% endmacro %} {% macro nav_svg_icon(user_name, logout_form=None) %}
+<div class="account-wrapper" id="account-wrapper">
+  <svg
+    id="account-icon"
+    onclick="toggleDropdown()"
+    xmlns="http://www.w3.org/2000/svg"
+    width="36"
+    height="36"
+    fill="currentColor"
+    viewBox="0 0 24 24"
+    class="nav-icon"
+  >
+    <title>Account</title>
+    <path
+      d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2S7.1 4.4 7.1 7.1S9.3 12 12 12zm0 2.4
+           c-3.3 0-9.8 1.7-9.8 5.1V22h19.6v-2.5c0-3.4-6.5-5.1-9.8-5.1z"
+    />
+  </svg>
+
+  <div id="user-dropdown" class="user-dropdown hidden">
+    <p>Hello, {{ user_name }}</p>
+    {% if logout_form %}
+    <form method="POST" action="{{ url_for('auth.logout') }}">
+      {{ logout_form.hidden_tag() }}
+      <button
+        type="submit"
+        class="btn-primary logout-btn"
+        onclick="return confirm('{{ user_name }} are you sure you want to sign out?')"
+      >
+        Sign out
+      </button>
+    </form>
+    {% endif %}
+  </div>
+</div>
+{% endmacro %}

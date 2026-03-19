@@ -1,0 +1,38 @@
+{% extends "navigation_base.html" %} {% block content %}
+<div class="homepage-grid">
+  <div class="tile top-left">
+    <div class="tile-info">
+      <h1>Flourish and Thrive</h1>
+      <h2>Track your plant care</h2>
+      <a href="{{ url_for('views.my_plants') }}" class="btn-primary">
+        View your plant dashboard
+        <span class="material-icons">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+  <div class="tile top-right">
+    <img
+      src="{{ url_for('static', filename='home_images/plant.png') }}"
+      alt="Plant illustration"
+      class="tile-img"
+    />
+  </div>
+  <div class="tile bottom-left">
+    <img
+      src="{{ url_for('static', filename='home_images/flowers.png') }}"
+      alt="Flower illustration"
+      class="tile-img"
+    />
+  </div>
+  <div class="tile bottom-right">
+    <div class="tile-info">
+      <h1>Explore plant varieties</h1>
+      <h2>Improve your knowledge and learn to care for your plants</h2>
+      <a href="{{ url_for('views.plant_library') }}" class="btn-primary"
+        >View plant library
+        <span class="material-icons">arrow_forward</span>
+      </a>
+    </div>
+  </div>
+</div>
+{% endblock %}
