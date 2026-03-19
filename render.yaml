@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: flourish-----
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "gunicorn run:app"
+    envVars:
+      - key: FLASK_ENV
+        value: production
+      - key: SECRET_KEY
+        generateValue: true
+```
+
+**`Procfile`** — an alternative to render.yaml for specifying the start command:
+```
+web: gunicorn run:app
